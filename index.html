@@ -1,144 +1,144 @@
-<!DOCTYPE html>
-<html lang="en">
+<html lang="ru">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="User King">
-    <link rel="icon" href="icon.png" type="image/x-icon">
-    <title>Перейти в Telegram</title>
+    <title>Результат запроса</title>
     <style>
         body {
-            margin: 0;
             font-family: 'Arial', sans-serif;
-            background: linear-gradient(135deg, #1a1a2e, #16213e);
-            color: #fff;
+            background-color: #000;  /* Черный фон */
+            color: #fff;  /* Белый текст */
+            margin: 0;
+            padding: 0;
             display: flex;
             justify-content: center;
-            align-items: center;
-            height: 100vh;
-            overflow: hidden;
+            align-items: flex-start;
+            min-height: 100vh;
+            font-size: 16px;
             text-align: center;
+            overflow: auto;  /* Разрешить прокрутку страницы */
         }
-
-        .card {
-            background: #13161a;
-            border-radius: 20px;
-            padding: 30px;
-            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
-            text-align: center;
-            max-width: 300px;
-            width: 100%;
+        .container {
+            background-color: #000;  /* Черный фон */
+            padding: 60px;
+            border-radius: 10px;
+            width: 70%;
+            max-width: 1000px;
+            line-height: 1.6;
+            box-shadow: 0 0 50px rgba(255, 255, 255, 0.2);  /* Легкая белая тень */
+            text-transform: uppercase;
+            overflow-y: auto;  /* Прокрутка внутри контейнера */
+            max-height: 95vh;  /* Ограничиваем максимальную высоту контейнера */
         }
-
-        .avatar-container {
-            width: 100px;
-            height: 100px;
-            margin: 0 auto;
-            overflow: hidden;
-            border-radius: 50%;
-            border: 5px solid #fff;
+        h1 {
+            font-size: 50px;
+            color: #fff;
+            margin-bottom: 40px;
+            font-weight: 900;
+        }
+        h2 {
+            font-size: 30px;
+            color: #fff;
+            margin-top: 20px;
             margin-bottom: 20px;
+            font-weight: bold;
         }
-
+        .info-section {
+            margin-bottom: 40px;
+        }
+        .info-section p {
+            font-size: 18px;
+            margin: 5px 0;
+            color: #d3d3d3;  /* Светло-серый текст */
+        }
+        .separator {
+            border-top: 1px solid #fff;
+            margin: 40px 0;
+        }
+        .links {
+            list-style-type: none;
+            padding: 0;
+        }
+        .links li {
+            margin: 10px 0;
+        }
+        .links a {
+            color: #fff;
+            text-decoration: none;
+            font-weight: bold;
+            font-size: 18px;
+            border-bottom: 1px solid #fff;
+            padding-bottom: 5px;
+        }
+        .links a:hover {
+            color: #ccc;
+            border-color: #ccc;
+        }
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+            }
+            to {
+                opacity: 1;
+            }
+        }
+        .container {
+            animation: fadeIn 2s ease-in-out;
+        }
+        .avatar-container {
+            position: relative;
+            display: inline-block;
+            border-radius: 50%;
+            width: 120px;
+            height: 120px;
+            overflow: hidden;
+            margin-bottom: 30px;
+        }
         .avatar-container img {
             width: 100%;
             height: 100%;
             object-fit: cover;
         }
-
-        h1 {
-            font-size: 2rem;
-            margin-bottom: 20px;
-            animation: slideIn 1s ease-out;
+        .footer a {
+            color: #fff;
+            text-decoration: none;
+            font-weight: bold;
         }
-
-        p {
-            font-size: 1.2rem;
-            margin-bottom: 30px;
-            animation: fadeInText 1.5s ease-in-out;
-        }
-
         .btn {
             display: inline-block;
             padding: 15px 30px;
             font-size: 1.2rem;
             color: #fff;
-            background: #0f3460;
+            background: #000000;
             border: none;
             border-radius: 50px;
             text-decoration: none;
             cursor: pointer;
-            box-shadow: 0 5px 15px rgba(15, 52, 96, 0.4);
+            box-shadow: 0 5px 15px rgba(208, 225, 246, 0.4);
             transition: all 0.3s ease-in-out;
         }
 
         .btn:hover {
             transform: translateY(-5px);
-            background: #1a508b;
-            box-shadow: 0 8px 20px rgba(26, 80, 139, 0.6);
-        }
-
-        .footer {
-            position: absolute;
-            bottom: 20px;
-            font-size: 0.9rem;
-            color: rgba(255, 255, 255, 0.8);
-        }
-
-        .footer a {
-            color: #ffffff;
-            text-decoration: none;
-        }
-
-        .footer a:hover {
-            text-decoration: underline;
-        }
-
-        @keyframes fadeIn {
-            from {
-                opacity: 0;
-                transform: translateY(-10px);
-            }
-            to {
-                opacity: 1;
-                transform: translateY(0);
-            }
-        }
-
-        @keyframes slideIn {
-            from {
-                opacity: 0;
-                transform: translateX(-30px);
-            }
-            to {
-                opacity: 1;
-                transform: translateX(0);
-            }
-        }
-
-        @keyframes fadeInText {
-            from {
-                opacity: 0;
-            }
-            to {
-                opacity: 1;
-            }
+            background: #000000;
+            box-shadow: 0 8px 20px rgba(255, 255, 255, 0.6);
         }
     </style>
 </head>
 <body>
-    <div class="card">
+    <div class="container">
         <div class="avatar-container">
-            <!-- Add your image URL here -->
-            <img src="icon.png" alt="User King Logo">
+            <img src="icon.png" alt="User Avatar">
         </div>
         <h1>Актуальная ссылка UserKing</h1>
         <a href="https://t.me/fiveuserking_bot" class="btn">Перейти</a>
-    </div>
-    <div class="footer">
-        <a href="https://t.me/fiveuserking_bot" target="_blank">@fiveuserking_bot</a>
-    </div>
-    
+        <div class="separator"></div>
+        <div class="info-section">
+            <h2>На этом сайте вы всегда сможете узнать актуальную ссылку на наш проект.</h2>
+        </div>
+        <div class="footer">
+            <a href="https://t.me/fiveuserking_bot" target="_blank">@fiveuserking_bot</a>
+        </div>
     </div>
 </body>
 </html>
